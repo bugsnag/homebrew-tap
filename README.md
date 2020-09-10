@@ -7,7 +7,7 @@ This is a tap for all Bugsnag Homebrew formulae.
 To install this tap, call
 
 ```
-brew tap bugsnag/bugsnag-tap
+brew tap bugsnag/tap
 ```
 
 To install a specific formula after installing the tap, then call
@@ -19,7 +19,7 @@ brew install <formula>
 Or, to do it all in one, install the formula directly. This will also add the Bugsnag Homebrew tap for the future:
 
 ```
-brew install bugsnag/bugsnag-tap/<formula>
+brew install bugsnag/tap/<formula>
 ```
 
 
