@@ -30,4 +30,4 @@ For help using Homebrew (`brew`), check out the help and manuals:
 `brew help`, `man brew` or see [Homebrew's documentation](https://docs.brew.sh).
 
 ## Support
-If you're having trouble getting Bugsnag's Homebrew tap, or a formula to install, please contact support@bugsnag.com. To report an issue with this tap, please open [a new issue](issues/new).
+If you're having trouble getting Bugsnag's Homebrew tap, or a formula to install, please contact support@bugsnag.com. To report an issue with this tap, please open [a new issue](../../issues/new).
