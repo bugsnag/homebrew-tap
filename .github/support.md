@@ -9,7 +9,8 @@ When contacting support, please include as much information as necessary, includ
 - steps to reproduce
 - expected/actual behaviour 
 
-* Homebrew version:
+* Homebrew version (`brew -v`):
+* Tool being installed from Brew:
 
 ## Bug or Feature Requests
 If you would like to raise a bug or feature request please do so by creating a [New Issue](https://github.com/bugsnag/homebrew-tap/issues/new/choose) and selecting bug or feature.

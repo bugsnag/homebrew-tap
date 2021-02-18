@@ -19,7 +19,8 @@ A clear and concise description of what the bug is.
 4. See error
 
 ### Environment
-* Homebrew version:
+* Homebrew version (`brew -v`):
+* Tool being installed from Brew:
 
 <!--
   Below are a few approaches you might take to communicate the issue, in
