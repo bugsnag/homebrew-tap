@@ -5,7 +5,6 @@ class BugsnagDsymUpload < Formula
   sha256 "bf6517b0d437adc167bc42b97376b46f41f7773ac0faaa9ed8697ce0082a5277"
   license "MIT"
   head "https://github.com/bugsnag/bugsnag-dsym-upload"
-  bottle :unneeded
 
   def install
     system "make", "BINDIR=#{bin}", "MANDIR=#{man}", "install"
