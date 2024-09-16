@@ -1,8 +1,8 @@
 class BugsnagDsymUpload < Formula
   desc "Commands for uploading files to Bugsnag via the upload APIs"
   homepage "https://docs.bugsnag.com/api/dsym-upload"
-  url "https://github.com/bugsnag/bugsnag-dsym-upload/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "f3b063a023be5db21807ba6bacbc2999f904db046ad267b888d23e4ee0adf165"
+  url "https://github.com/bugsnag/bugsnag-dsym-upload/archive/refs/tags/v2.3.1.tar.gz"
+  sha256 "503f1a8aa93ccc32af25e3122ea97630002332f5c79bff3405f39632f9095f6f"
   license "MIT"
   head "https://github.com/bugsnag/bugsnag-dsym-upload"
 
