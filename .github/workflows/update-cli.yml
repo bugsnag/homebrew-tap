@@ -19,11 +19,8 @@ jobs:
       BUNDLE_GITHUB__COM: ${{ secrets.BUNDLE_ACCESS_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-
       - name: Check out code
         uses: actions/checkout@v4
-        with:
-          ref: next
 
       - name: Configure Git
         run: |
@@ -45,8 +42,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get install -y ruby jq gh
-          gem install bundler
           bundle install
 
       - name: Remove leading 'v'
