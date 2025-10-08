@@ -1,0 +1,104 @@
+name: update-cli
+
+on:
+  repository_dispatch:
+    types: [update-cli]
+  workflow_dispatch:
+    inputs:
+      cli_version:
+        description: 'Version of the CLI to update to'
+        required: true
+        type: string
+
+jobs:
+  update-cli:
+    runs-on: ubuntu-latest
+    env:
+      TARGET_REPO: "bugsnag-cli"
+      RAW_VERSION: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.cli_version || inputs.cli_version }}
+      BUNDLE_GITHUB__COM: ${{ secrets.BUNDLE_ACCESS_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          ref: next
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "Bumpsnag Bot"
+          git config --global user.email "bumpsnag-bot@users.noreply.github.com"
+
+      - name: get git history
+        run: git fetch --prune --unshallow
+
+      - name: Install ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
+
+      - name: Install libcurl4-openssl-dev and net-tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install libcurl4-openssl-dev net-tools
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get install -y ruby jq gh
+          gem install bundler
+          bundle install
+
+      - name: Remove leading 'v'
+        shell: bash
+        run: |
+          echo "CLI_VERSION=${RAW_VERSION#v}" >> $GITHUB_ENV
+
+      - name: Update Homebrew formula with new version and SHA256 checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          echo "🔹 Updating Homebrew formula for version v${CLI_VERSION}"
+  
+          FILES_VALUES=("x86_64-macos-bugsnag-cli" "arm64-macos-bugsnag-cli" "x86_64-linux-bugsnag-cli" "arm64-linux-bugsnag-cli" "i386-linux-bugsnag-cli")
+  
+          for ASSET_NAME in "${FILES_VALUES[@]}"; do
+            echo "Computing SHA256 for $ASSET_NAME ..."
+
+            SHA256=$(gh release download "v${CLI_VERSION}" \
+            --repo bugsnag/bugsnag-cli \
+            --pattern "$ASSET_NAME" \
+            -O - | sha256sum | awk '{print $1}')
+
+            echo "✅ $ASSET_NAME -> $SHA256"
+
+            # Directly replace the sha256 line after the line containing the asset name
+            awk -v asset="$ASSET_NAME" -v sha="$SHA256" '
+              $0 ~ asset { print; getline; sub(/sha256 "[^"]+"/, "sha256 \"" sha "\""); print; next }
+              { print }
+            ' Formula/bugsnag-cli.rb > Formula/bugsnag-cli.rb.tmp && mv Formula/bugsnag-cli.rb.tmp Formula/bugsnag-cli.rb
+          done
+
+          # Update the version in URLs
+          awk -v ver="v$CLI_VERSION" '
+            {
+              gsub(/(releases\/download\/)v[0-9]+\.[0-9]+\.[0-9]+\//, "\\1" ver "/")
+            }
+            { print }
+          ' Formula/bugsnag-cli.rb > Formula/bugsnag-cli.rb.tmp && mv Formula/bugsnag-cli.rb.tmp Formula/bugsnag-cli.rb
+
+          echo "✅ Updated Formula/bugsnag-cli.rb for version v${CLI_VERSION}"
+
+      - name: Create bump commit
+        run: |
+          bundle exec bumpsnag commit-update $TARGET_REPO $RAW_VERSION
+
+      - name: Create pull request
+        if: ${{ steps.current-branch.outputs.branch != 'master'}}
+        run: >
+          gh pr create -B master
+          -H bumpsnag-$TARGET_REPO-$RAW_VERSION
+          --title "Update $TARGET_REPO to version $RAW_VERSION"
+          --body 'Created by bumpsnag'
+          --reviewer joshedney
