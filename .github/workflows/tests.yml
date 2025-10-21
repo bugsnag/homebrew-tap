@@ -29,6 +29,8 @@ jobs:
       - run: brew test-bot --only-cleanup-before
 
       - run: brew test-bot --only-setup
+        env:
+          HOMEBREW_NO_BUNDLE: 1
 
       - run: brew test-bot --only-tap-syntax
 
