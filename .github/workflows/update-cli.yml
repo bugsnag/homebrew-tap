@@ -19,11 +19,12 @@ jobs:
       BUNDLE_GITHUB__COM: ${{ secrets.BUNDLE_ACCESS_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-
       - name: Check out code
         uses: actions/checkout@v4
-        with:
-          ref: next
+
+      - name: Get current branch
+        id: current-branch
+        run: echo "branch=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
 
       - name: Configure Git
         run: |
@@ -45,14 +46,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get install -y ruby jq gh
-          gem install bundler
           bundle install
 
       - name: Remove leading 'v'
         shell: bash
         run: |
-          echo "CLI_VERSION=${RAW_VERSION#v}" >> $GITHUB_ENV
+          echo "CLI_VERSION=${RAW_VERSION#v}" >> "$GITHUB_ENV"
 
       - name: Update Homebrew formula with new version and SHA256 checksums
         shell: bash
@@ -92,13 +91,13 @@ jobs:
 
       - name: Create bump commit
         run: |
-          bundle exec bumpsnag commit-update $TARGET_REPO $RAW_VERSION
+          bundle exec bumpsnag commit-update "$TARGET_REPO" "$RAW_VERSION"
 
       - name: Create pull request
         if: ${{ steps.current-branch.outputs.branch != 'master'}}
         run: >
           gh pr create -B master
-          -H bumpsnag-$TARGET_REPO-$RAW_VERSION
+          -H bumpsnag-"$TARGET_REPO"-"$RAW_VERSION"
           --title "Update $TARGET_REPO to version $RAW_VERSION"
           --body 'Created by bumpsnag'
           --reviewer joshedney
