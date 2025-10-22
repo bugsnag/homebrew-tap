@@ -22,6 +22,9 @@ jobs:
           key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
           restore-keys: ${{ runner.os }}-rubygems-
 
+      # Not used during this workflow - can cause issues with Homebrews linting and style checks
+      - run: rm Gemfile
+
       - name: Install Homebrew Bundler RubyGems
         if: steps.cache.outputs.cache-hit != 'true'
         run: brew install-bundler-gems
@@ -29,8 +32,6 @@ jobs:
       - run: brew test-bot --only-cleanup-before
 
       - run: brew test-bot --only-setup
-        env:
-          HOMEBREW_NO_BUNDLE: 1
 
       - run: brew test-bot --only-tap-syntax
 
