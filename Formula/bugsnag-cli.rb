@@ -5,22 +5,22 @@ class BugsnagCli < Formula
 
   if OS.mac?
     if Hardware::CPU.intel?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.4.0/x86_64-macos-bugsnag-cli"
-      sha256 "35a545eefd60ab648886934942c1ab77909d9820e814300c6255bb54d36ae1eb"
+      url "https://github.com/bugsnag/bugsnag-cli/\1v3.5.1/x86_64-macos-bugsnag-cli"
+      sha256 "bac2e2877e8b216071cf7c4cd57ebdc577db43a28b21a6fc57c1dde53814e925"
     elsif Hardware::CPU.arm?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.4.0/arm64-macos-bugsnag-cli"
-      sha256 "f1394ef501e9dc4cc6b3745c7f627b50c04eaf48c8091e0b94d3fa8b324ecae5"
+      url "https://github.com/bugsnag/bugsnag-cli/\1v3.5.1/arm64-macos-bugsnag-cli"
+      sha256 "48fa68acc19e20415ac4badb7a593b6eceb6123d43179e1ff10228a6f1d1d5f0"
     end
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.4.0/x86_64-linux-bugsnag-cli"
-      sha256 "e5bf31d8e597155c7085114659c864b763e085a6a04c955189cb76eb1dbbd2f2"
+      url "https://github.com/bugsnag/bugsnag-cli/\1v3.5.1/x86_64-linux-bugsnag-cli"
+      sha256 "5eb5431b4ab8f96b9dfc52d9f87c507aee1e141c609e414a8e891bee490be461"
     elsif Hardware::CPU.arm?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.4.0/arm64-linux-bugsnag-cli"
-      sha256 "ed501333a17374dfe834f5c049ba7f4d7f900fe64b0d24104e6cf721a1f9488f"
+      url "https://github.com/bugsnag/bugsnag-cli/\1v3.5.1/arm64-linux-bugsnag-cli"
+      sha256 "fce2b934d7912143e32d3a1723a3797f2939fc3f19e88fe6ffbdf3675cc5f1b5"
     elsif Hardware::CPU.is_32_bit?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.4.0/i386-linux-bugsnag-cli"
-      sha256 "4bb3569f64b4ef632dc0355704447c06d7ee004feb5e1ce565c008f9d3b69d13"
+      url "https://github.com/bugsnag/bugsnag-cli/\1v3.5.1/i386-linux-bugsnag-cli"
+      sha256 "9c87be599beb54bfe3add13003e9c63e345d872b25a107136669c2e2417afe4a"
     end
   end
 
