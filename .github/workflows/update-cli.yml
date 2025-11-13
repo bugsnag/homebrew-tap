@@ -98,7 +98,6 @@ jobs:
           bundle exec bumpsnag commit-update "$TARGET_REPO" "$RAW_VERSION"
 
       - name: Create pull request
-        if: ${{ steps.current-branch.outputs.branch != 'master' }}
         run: >
           gh pr create -B master
           -H bumpsnag-"$TARGET_REPO"-"$RAW_VERSION"
