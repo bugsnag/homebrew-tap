@@ -5,22 +5,22 @@ class BugsnagCli < Formula
 
   if OS.mac?
     if Hardware::CPU.intel?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.5.1/x86_64-macos-bugsnag-cli"
-      sha256 "bac2e2877e8b216071cf7c4cd57ebdc577db43a28b21a6fc57c1dde53814e925"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.6.0/x86_64-macos-bugsnag-cli"
+      sha256 "4c09939e9aefc19508a5224e6b17bb7f7d1baea026b4b17241e76b31b161e933"
     elsif Hardware::CPU.arm?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.5.1/arm64-macos-bugsnag-cli"
-      sha256 "48fa68acc19e20415ac4badb7a593b6eceb6123d43179e1ff10228a6f1d1d5f0"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.6.0/arm64-macos-bugsnag-cli"
+      sha256 "d096127d9ee34822db9a770b0bcab6428e67fe6f0ebfd34a7de96270c7e33721"
     end
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.5.1/x86_64-linux-bugsnag-cli"
-      sha256 "5eb5431b4ab8f96b9dfc52d9f87c507aee1e141c609e414a8e891bee490be461"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.6.0/x86_64-linux-bugsnag-cli"
+      sha256 "74ba2c6d8ec76ef70b4e842a03c4b190dd304aa24de3c8488a8db26873c63d2c"
     elsif Hardware::CPU.arm?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.5.1/arm64-linux-bugsnag-cli"
-      sha256 "fce2b934d7912143e32d3a1723a3797f2939fc3f19e88fe6ffbdf3675cc5f1b5"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.6.0/arm64-linux-bugsnag-cli"
+      sha256 "e0b678b39768182d550cde66e70dc9b7f77715d8c52ac5e24a9a6980674b1531"
     elsif Hardware::CPU.is_32_bit?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.5.1/i386-linux-bugsnag-cli"
-      sha256 "9c87be599beb54bfe3add13003e9c63e345d872b25a107136669c2e2417afe4a"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.6.0/i386-linux-bugsnag-cli"
+      sha256 "9b6a1eab583ef235347bc31f2fb332a6434989ce27e919d2418d56d769357112"
     end
   end
 
