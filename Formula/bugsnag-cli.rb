@@ -5,22 +5,22 @@ class BugsnagCli < Formula
 
   if OS.mac?
     if Hardware::CPU.intel?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.6.1/x86_64-macos-bugsnag-cli"
-      sha256 "b641a99411cf45ace1a6019d76c0789dcdf151b99114d87566b17f39eeacd7ea"
+      url "https://github.com/bugsnag/bugsnag-cli/eleases/download/v3.7.0/x86_64-macos-bugsnag-cli"
+      sha256 "ff9f9526f0bddce99d6bc1a39059ea1a113ac430412640aa748d93eb82eca81b"
     elsif Hardware::CPU.arm?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.6.1/arm64-macos-bugsnag-cli"
-      sha256 "1e1be1cf320876c7b540e173faac0daba615a6d0eb66a8a48ad19dcf2cceaee7"
+      url "https://github.com/bugsnag/bugsnag-cli/eleases/download/v3.7.0/arm64-macos-bugsnag-cli"
+      sha256 "56dde319d488efbafb1fe216435cc474b635f8b776a49c930ccfa024b28c762c"
     end
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.6.1/x86_64-linux-bugsnag-cli"
-      sha256 "f32bc075ad4667102cae1c6d61970af81f7a8989bb392604f471a0bb7a3bd5c0"
+      url "https://github.com/bugsnag/bugsnag-cli/eleases/download/v3.7.0/x86_64-linux-bugsnag-cli"
+      sha256 "eb987fb7ade186f91694e12adf00c0a4442359dc3462a93fef2e9bf4334f8801"
     elsif Hardware::CPU.arm?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.6.1/arm64-linux-bugsnag-cli"
-      sha256 "b5a8cf8f5072110b3212cd62273a6fb793aa18adda256feb3adeabb7675d5217"
+      url "https://github.com/bugsnag/bugsnag-cli/eleases/download/v3.7.0/arm64-linux-bugsnag-cli"
+      sha256 "b47bc8b94c9a22974a278ceab1d5924a10c5a02703dc5da0bd114a2dae38235c"
     elsif Hardware::CPU.is_32_bit?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.6.1/i386-linux-bugsnag-cli"
-      sha256 "86d50126c30196b4e114643b6e45bd4fc76665a9c02d664467af6c4d5ea9fbf0"
+      url "https://github.com/bugsnag/bugsnag-cli/eleases/download/v3.7.0/i386-linux-bugsnag-cli"
+      sha256 "fd5d60b0e4f078058a8f6bb3d3d574609add4987abeb4ce17382fac097451def"
     end
   end
 
