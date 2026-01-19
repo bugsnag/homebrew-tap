@@ -1,6 +1,6 @@
 # Changelog
 
-## TBD
+## [0.1.4] - 2026-01-19
 
 ### Dependencies
 

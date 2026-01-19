@@ -82,7 +82,7 @@ jobs:
           # Update the version in URLs
           awk -v ver="v$CLI_VERSION" '
             {
-              gsub(/(releases\/download\/)v[0-9]+\.[0-9]+\.[0-9]+\//, "\releases/download/" ver "/")
+              gsub(/(releases\/download\/)v[0-9]+\.[0-9]+\.[0-9]+\//, "\\1" ver "/")
             }
             { print }
           ' Formula/bugsnag-cli.rb > Formula/bugsnag-cli.rb.tmp && mv Formula/bugsnag-cli.rb.tmp Formula/bugsnag-cli.rb
