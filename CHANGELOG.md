@@ -1,5 +1,11 @@
 # Changelog
 
+## TBD
+
+### Dependencies
+
+Update bugsnag-cli to [v3.8.0](https//github.com/bugsnag/bugsnag-cli/releases/tag/v3.8.0) [#18](https://github.com/bugsnag/homebrew-tap/pull/18)
+
 ## [0.1.4] - 2026-01-19
 
 ### Dependencies
