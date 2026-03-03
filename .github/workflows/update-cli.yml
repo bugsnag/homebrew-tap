@@ -80,12 +80,7 @@ jobs:
           done
 
           # Update the version in URLs
-          awk -v ver="v$CLI_VERSION" '
-            {
-              gsub(/(releases\/download\/)v[0-9]+\.[0-9]+\.[0-9]+\//, "\\1" ver "/")
-            }
-            { print }
-          ' Formula/bugsnag-cli.rb > Formula/bugsnag-cli.rb.tmp && mv Formula/bugsnag-cli.rb.tmp Formula/bugsnag-cli.rb
+          sed -i "s|releases/download/v[0-9]\+\.[0-9]\+\.[0-9]\+/|releases/download/v${CLI_VERSION}/|g" Formula/bugsnag-cli.rb
 
           echo "✅ Updated Formula/bugsnag-cli.rb for version v${CLI_VERSION}"
 
