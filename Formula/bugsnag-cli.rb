@@ -5,22 +5,22 @@ class BugsnagCli < Formula
 
   if OS.mac?
     if Hardware::CPU.intel?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.9.0/x86_64-macos-bugsnag-cli"
-      sha256 "6ffae058c6563d75e5ccf496e3181094ffa9bc8a10c5a504cb490f08701c99d7"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/x86_64-macos-bugsnag-cli"
+      sha256 "0fcbd6394867cfb64e50942de1a4272664af04828d5144f03003a3c71d73ba70"
     elsif Hardware::CPU.arm?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.9.0/arm64-macos-bugsnag-cli"
-      sha256 "b6557831b183fe2527546739d1e512092acc7542f9ae834462cdb10ff8d96575"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/arm64-macos-bugsnag-cli"
+      sha256 "c57d29a607544df5c8961c99a5b7d536a607bd32f975d24caaaa224e72834bd7"
     end
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.9.0/x86_64-linux-bugsnag-cli"
-      sha256 "d6c23baf8cde3c39462dae0c1c6358194f1278951de21d16e4b3ff2ebcccb0f7"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/x86_64-linux-bugsnag-cli"
+      sha256 "15cff99c7b24ee5891ba6c8efe7913d18c7d9c5f4f15a0df0cf341cf3a851c5d"
     elsif Hardware::CPU.arm?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.9.0/arm64-linux-bugsnag-cli"
-      sha256 "d5acb0f8ced7066bc370c78030a3356958346f1653176b7f6f38bb1caf24e722"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/arm64-linux-bugsnag-cli"
+      sha256 "0e375586132954606e94e5b3c5d466ad54f26519cf2a9d1bbf4dad38ce734636"
     elsif Hardware::CPU.is_32_bit?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.9.0/i386-linux-bugsnag-cli"
-      sha256 "4eb88699a921bf9a81acf7a0ebef2b108d03c6062ef6637a3c8d5f8c8186f0ca"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/i386-linux-bugsnag-cli"
+      sha256 "c52840f3aaea39b3f4aede5f45b5bb5348eec3eeaa77f3155f8a067a8cb5f91c"
     end
   end
 
