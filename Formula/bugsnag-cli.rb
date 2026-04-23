@@ -5,22 +5,22 @@ class BugsnagCli < Formula
 
   if OS.mac?
     if Hardware::CPU.intel?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/x86_64-macos-bugsnag-cli"
-      sha256 "0fcbd6394867cfb64e50942de1a4272664af04828d5144f03003a3c71d73ba70"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.1/x86_64-macos-bugsnag-cli"
+      sha256 "42563791cefea6ddaed1db91c2c18f9fdb0029b0b007d26fa6299ceb92d14a0a"
     elsif Hardware::CPU.arm?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/arm64-macos-bugsnag-cli"
-      sha256 "c57d29a607544df5c8961c99a5b7d536a607bd32f975d24caaaa224e72834bd7"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.1/arm64-macos-bugsnag-cli"
+      sha256 "c48f0117db30d4a2f86c09ec9fc96470fdfb79281290508a8957e38df7196063"
     end
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/x86_64-linux-bugsnag-cli"
-      sha256 "15cff99c7b24ee5891ba6c8efe7913d18c7d9c5f4f15a0df0cf341cf3a851c5d"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.1/x86_64-linux-bugsnag-cli"
+      sha256 "6593a7018916abe4f4c9a86d7ebbcafadb04673253914e80826adcbc2701ca94"
     elsif Hardware::CPU.arm?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/arm64-linux-bugsnag-cli"
-      sha256 "0e375586132954606e94e5b3c5d466ad54f26519cf2a9d1bbf4dad38ce734636"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.1/arm64-linux-bugsnag-cli"
+      sha256 "2d2f1474a2b6f17a7fc27a81a4eb815f859ffb1f044b6f839fdffe95b0c6c40e"
     elsif Hardware::CPU.is_32_bit?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/i386-linux-bugsnag-cli"
-      sha256 "c52840f3aaea39b3f4aede5f45b5bb5348eec3eeaa77f3155f8a067a8cb5f91c"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.1/i386-linux-bugsnag-cli"
+      sha256 "52c6c193909f1b37e724d69be025fff433d86f618e9e69142ecaa2de2a96c1bf"
     end
   end
 
