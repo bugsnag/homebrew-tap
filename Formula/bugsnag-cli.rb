@@ -5,22 +5,22 @@ class BugsnagCli < Formula
 
   if OS.mac?
     if Hardware::CPU.intel?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/x86_64-macos-bugsnag-cli"
-      sha256 "0fcbd6394867cfb64e50942de1a4272664af04828d5144f03003a3c71d73ba70"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.5/x86_64-macos-bugsnag-cli"
+      sha256 "48a27bc867284b6ab4931c234382f6d6b14c8fe6a31bd52156f102b35b093e26"
     elsif Hardware::CPU.arm?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/arm64-macos-bugsnag-cli"
-      sha256 "c57d29a607544df5c8961c99a5b7d536a607bd32f975d24caaaa224e72834bd7"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.5/arm64-macos-bugsnag-cli"
+      sha256 "a495ad9e9eda0b4bed2e691e920125ce8f04a6388dbe3f70c06b400735085e4a"
     end
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/x86_64-linux-bugsnag-cli"
-      sha256 "15cff99c7b24ee5891ba6c8efe7913d18c7d9c5f4f15a0df0cf341cf3a851c5d"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.5/x86_64-linux-bugsnag-cli"
+      sha256 "809e50875d2be62a1cb0fbed653c795bd76c74c93af616df20e6a57afc76402f"
     elsif Hardware::CPU.arm?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/arm64-linux-bugsnag-cli"
-      sha256 "0e375586132954606e94e5b3c5d466ad54f26519cf2a9d1bbf4dad38ce734636"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.5/arm64-linux-bugsnag-cli"
+      sha256 "b8f6222a0e662721bf262aa520e068e500ed664eabba70b54932c7f1d7fcaeb3"
     elsif Hardware::CPU.is_32_bit?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/i386-linux-bugsnag-cli"
-      sha256 "c52840f3aaea39b3f4aede5f45b5bb5348eec3eeaa77f3155f8a067a8cb5f91c"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.5/i386-linux-bugsnag-cli"
+      sha256 "99216191ab2c36ae6806d1b38d155cfbcc6a4c315c2fd0acf5592dcbd152fad6"
     end
   end
 
