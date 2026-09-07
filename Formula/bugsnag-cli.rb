@@ -5,22 +5,22 @@ class BugsnagCli < Formula
 
   if OS.mac?
     if Hardware::CPU.intel?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/x86_64-macos-bugsnag-cli"
-      sha256 "0fcbd6394867cfb64e50942de1a4272664af04828d5144f03003a3c71d73ba70"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.6/x86_64-macos-bugsnag-cli"
+      sha256 "0d8e740d7da102272f10e5936535c277570e38d973d1310524ff0e28ad1a70ac"
     elsif Hardware::CPU.arm?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/arm64-macos-bugsnag-cli"
-      sha256 "c57d29a607544df5c8961c99a5b7d536a607bd32f975d24caaaa224e72834bd7"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.6/arm64-macos-bugsnag-cli"
+      sha256 "c8c1289970f2700271fa27677d9de59b235191492fc331c3ce4b61caca5946b1"
     end
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/x86_64-linux-bugsnag-cli"
-      sha256 "15cff99c7b24ee5891ba6c8efe7913d18c7d9c5f4f15a0df0cf341cf3a851c5d"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.6/x86_64-linux-bugsnag-cli"
+      sha256 "a94982459576e399a35a19d03370a5d8cd8d61ddbcf58ea64936deb19214b213"
     elsif Hardware::CPU.arm?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/arm64-linux-bugsnag-cli"
-      sha256 "0e375586132954606e94e5b3c5d466ad54f26519cf2a9d1bbf4dad38ce734636"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.6/arm64-linux-bugsnag-cli"
+      sha256 "04b792e7c1e2d5dff1ae67d39f9ae977e437b6de9d7b360ff06a351a1287cb66"
     elsif Hardware::CPU.is_32_bit?
-      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.0/i386-linux-bugsnag-cli"
-      sha256 "c52840f3aaea39b3f4aede5f45b5bb5348eec3eeaa77f3155f8a067a8cb5f91c"
+      url "https://github.com/bugsnag/bugsnag-cli/releases/download/v3.10.6/i386-linux-bugsnag-cli"
+      sha256 "e696251335ce705165a917f88014820ca585a60d24a54cfc7231a9d1ad2004c5"
     end
   end
 
