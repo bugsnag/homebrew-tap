@@ -4,6 +4,12 @@
 
 ### Dependencies
 
+Update bugsnag-cli to [v3.10.7](https//github.com/bugsnag/bugsnag-cli/releases/tag/v3.10.7) [#28](https://github.com/bugsnag/homebrew-tap/pull/28)
+Update bugsnag-cli to [v3.10.6](https//github.com/bugsnag/bugsnag-cli/releases/tag/v3.10.6) [#27](https://github.com/bugsnag/homebrew-tap/pull/27)
+Update bugsnag-cli to [v3.10.5](https//github.com/bugsnag/bugsnag-cli/releases/tag/v3.10.5) [#26](https://github.com/bugsnag/homebrew-tap/pull/26)
+Update bugsnag-cli to [v3.10.4](https//github.com/bugsnag/bugsnag-cli/releases/tag/v3.10.4) [#24](https://github.com/bugsnag/homebrew-tap/pull/24)
+Update bugsnag-cli to [v3.10.3](https//github.com/bugsnag/bugsnag-cli/releases/tag/v3.10.3) [#23](https://github.com/bugsnag/homebrew-tap/pull/23)
+Update bugsnag-cli to [v3.10.2](https//github.com/bugsnag/bugsnag-cli/releases/tag/v3.10.2) [#22](https://github.com/bugsnag/homebrew-tap/pull/22)
 Update bugsnag-cli to [v3.10.1](https//github.com/bugsnag/bugsnag-cli/releases/tag/v3.10.1) [#21](https://github.com/bugsnag/homebrew-tap/pull/21)
 
 ## [0.1.7] - 2026-03-31
